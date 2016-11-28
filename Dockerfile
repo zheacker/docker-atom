@@ -73,11 +73,11 @@ RUN  set -x \
 
 
 # final cleanup - from phusion/baseimage
-     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+     && mkdir /opt/project
 # not sure if I should get rid of these packages...
 #	&& apt-get purge -y --auto-remove ca-certificates curl \
 
-
 ENV PATH /opt/conda/bin:$PATH
 
-# ENTRYPOINT [ "atom", "--foreground" ]
+ENTRYPOINT [ "atom", "--foreground" ]
