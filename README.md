@@ -4,15 +4,15 @@ This container bundles together Atom, Hydrogen, and Anaconda3 for an entire port
 # running the container
 Must run `xhost +` before executing the docker command below.
 
-`docker run \
+```
+docker run \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
--v /path/to/project:/opt/project \
+-v /host-side/path/to/project:/container-side/path/to/project \
 -e DISPLAY=unix$DISPLAY \
 name \
-/opt/project`
+/container-side/path/to/project
+```
 
 # to-do
-
 * consider pulling the kernel out into a separate container
-* figure out how to launch directly into any path specified with `-v`
 * deal with `xhost` vulnerability
