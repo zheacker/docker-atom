@@ -73,8 +73,8 @@ RUN  set -x \
 
 
 # final cleanup - from phusion/baseimage
-     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-     && mkdir /opt/project
+     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 # not sure if I should get rid of these packages...
 #	&& apt-get purge -y --auto-remove ca-certificates curl \
 
